@@ -86,8 +86,10 @@ The resume has four distinct sections: work, education, projects and a header wi
    * Pay close attention to the ids of the `<div>`s in index.html and the HTML snippets in helper.js. They’ll be very useful as jQuery selectors for `selector.append()` and `selector.prepend()`
 * You’ll also be using the JavaScript method `string.replace(old, new)` to swap out all the placeholder text (e.g. `%data%`) for data from your resume JSONs.
 * Here’s an example of some code that would add the location of one your companies to the page:
+
    * `var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);`
    * `$(".work-entry:last").append(formattedLocation);`
+
  * Use the mockup at the page of this document as a guide for the order in which you should append elements to the page.
 3. The resume includes an interactive map. Do the following to add it. 
  * In resumeBuilder.js, append the googleMap string to `<div id=”mapDiv”>`.
