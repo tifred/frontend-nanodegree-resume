@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Resume EXP </title>
+  <script src="js/jQuery.js"></script>
+  <script src="js/helper.js"></script>
+  <script src="js/bootstrap.js"></script>
+ <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="css/style.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Cambay:400,400italic,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+
+   <!-- navbar -->
+        <nav class="navbar navbar-default">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">The World of Eduardo Zanzibar</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class="dropdown">
+                  <a href="#" class="active dropdown-toggle" data-toggle="dropdown" role="button">Projects<span class="caret"></caret></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#projects">Photojournalism by Eric Taffo</a></li>
+                    <li><a href="#projects">Portfolio by Amy Schleisser</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">News <span class="caret"></caret></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Gallery Showings</a></li>
+                    <li><a href="#">Recent Travel</a></li>
+                    <li><a href="#">Grants</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+
+
+  <!-- Using grid system from bootstrap (i.e. container class)
+       Standard media breakpoints: 768, 992, 1200. -->
+
+  <div class="container">
+
+    <header class="row">
+      <div id="header" class="center-content clear-fix col-sm-12">
+        <ul id="topContacts" class="flex-box"></ul>
+      </div>
+    </header>
+
+
+    <section class="row">
+      <div id="workExperience" class="col-md-6">
+	<h2>Work Experience</h2>
+      </div>
+
+      <div id="education" class="col-md-6">
+	<h2>Education</h2>
+      </div>
+    </section>
+
+    <section class="row">
+
+      <div id="projects" class="col-md-6">
+	<h2>Projects</h2>
+      </div>
+
+      <div id="mapDiv" class="col-md-6">
+	<h2>Where I've Lived and Worked</h2>
+      </div>
+    </section>
+
+    <section class="row">
+      <div id="lets-connect" class="footer-bg">
+	<h2 class="center-text">Let's Connect</h2>
+	  <ul id="footerContacts" class="flex-box">
+	</ul>
+      </div>
+    </section>
+<!--
+  </div>
+-->
+
+  </div>
+
+  <script src="js/resumeBuilder.js"></script>
+
+  <script type="text/javascript">
+
+    if(document.getElementsByClassName('flex-item').length === 0) {
+      document.getElementById('topContacts').style.display = 'none';
+    }
+    if(document.getElementsByTagName('h1').length === 0) {
+      document.getElementById('header').style.display = 'none';
+    }
+    if(document.getElementsByClassName('work-entry').length === 0) {
+      document.getElementById('workExperience').style.display = 'none';
+    }
+    if(document.getElementsByClassName('project-entry').length === 0) {
+      document.getElementById('projects').style.display = 'none';
+    }
+    if(document.getElementsByClassName('education-entry').length === 0) {
+      document.getElementById('education').style.display = 'none';
+    }
+    if(document.getElementsByClassName('flex-item').length === 0) {
+      document.getElementById('lets-connect').style.display = 'none';
+    }
+    if(document.getElementById('map') === null) {
+      document.getElementById('mapDiv').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

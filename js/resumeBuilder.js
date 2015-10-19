@@ -67,7 +67,7 @@ var work = '{' +
 '    "jobs": [' +
 '      {' +
 '        "employer": "Sahara Safaris",' +
-'        "title": "Lead Expidionary Photographer",' +
+'        "title": "Lead Travel Photographer",' +
 '        "location": "Marrakesh, Morocco",' +
 '        "dates": "Jan 2013 - present",' +
 '        "description": "Sunset Wrangling, Group Posing, Camel Cajoling"' +
@@ -85,13 +85,13 @@ var work = '{' +
 var projects = '{' +
 '    "projects": [' +
 '      {' +
-'        "title": "Photojournalism by Eric Nomberg",' +
+'        "title": "Photojournalism by Eric Taffo",' +
 '        "dates": "May 2015",' +
 '        "description": "Travel Photography from South America",' +
 '        "images": [' +
-'          "http://placehold.it/350x150", ' +
-'          "http://placehold.it/350x150", ' +
-'          "http://placehold.it/350x150" ' +
+'          "http://placehold.it/300x200", ' +
+'          "http://placehold.it/300x200", ' +
+'          "http://placehold.it/300x200" ' +
 '        ]' +
 '      },' +
 '      {' +
@@ -99,9 +99,9 @@ var projects = '{' +
 '        "dates": "Jan 2015",' +
 '        "description": "Professional Portfolio",' +
 '        "images": [' +
-'          "http://placehold.it/350x150", ' +
-'          "http://placehold.it/350x150", ' +
-'          "http://placehold.it/350x150" ' +
+'          "http://placehold.it/300x200", ' +
+'          "http://placehold.it/300x200", ' +
+'          "http://placehold.it/300x200" ' +
 '        ]' +
 '      }' +
 '    ]' +
