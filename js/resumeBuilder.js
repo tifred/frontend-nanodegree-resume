@@ -1,7 +1,6 @@
 /*
-This is empty on purpose! Your code to build the resume will go here.
+Build four json objects.
  */
-
 
 var bio = '{' +
 '    "name": "Eduardo Zanzibar", ' +
@@ -11,7 +10,7 @@ var bio = '{' +
 '      "email": "flunky@lmi.net",' +
 '      "github": "https://AA ",' +
 '      "twitter": "https://BB ",' +
-'      "location": "https://CC "' +
+'      "location": "Oakland, CA"' +
 '   },' +
 '   "welcomeMessage": "Feeling Fancy?",' +
 '   "skills": [' +
@@ -27,7 +26,7 @@ var education = '{' +
 '    "schools": [' +
 '      {' +
 '        "name": "UCB",' +
-'        "location": "Santa Barbara",' +
+'        "location": "Santa Barbara, CA",' +
 '        "degree": "B.A. Fine Arts",' +
 '        "majors": [' +
 '          "Fine Arts",' +
@@ -37,7 +36,7 @@ var education = '{' +
 '      },' +
 '      {' +
 '         "name": "Cal Northridge",' +
-'         "location": "Northridge",' +
+'         "location": "Northridge, CA",' +
 '         "degree": "B.A. Fine Arts",' +
 '         "majors": [' +
 '           "Fine Arts",' +
@@ -68,14 +67,14 @@ var work = '{' +
 '      {' +
 '        "employer": "XX",' +
 '        "title": "YY",' +
-'        "location": "NY",' +
+'        "location": "Albany, NY",' +
 '        "dates": "01-01-04-05-04-08",' +
 '        "description": "stuff"' +
 '      },' +
 '      {' +
 '        "employer": "XX",' +
 '        "title": "ZZ",' +
-'        "location": "NY",' +
+'        "location": "Paris, France",' +
 '        "dates": "01-01-04-05-04-08",' +
 '        "description": "stuff"' +
 '      }' +
@@ -109,6 +108,8 @@ var projects = '{' +
 '    "display": "function goes here"' +
 '}';
 
+// Create JavaScript objects from each JSON string:
+
 var education = JSON.parse(education);
 var bio = JSON.parse(bio);
 var work = JSON.parse(work);
@@ -118,6 +119,7 @@ var projects = JSON.parse(projects);
 
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formattedRole);
+
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 $("#header").prepend(formattedName);
 
@@ -133,12 +135,17 @@ $("#header").append(formattedbioPic);
 var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 $("#header").append(formattedWelcome);
 
-$("#header").append(HTMLskillsStart);
+// if there are no skills in the bio.skills array, don't add the skills section:
 
-for (var i = 0; i < bio.skills.length; i++ ) {
-  var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
-  $("#skills-h3").append(formattedSkill);
+if ( Array.isArray(bio.skills) ) {
+  $("#header").append(HTMLskillsStart);
+
+  for (var i = 0; i < bio.skills.length; i++ ) {
+    var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+    $("#skills-h3").append(formattedSkill);
+  }
 }
+
 
 // Step through work object.
 
@@ -154,7 +161,8 @@ for (var i = 0; i < work.jobs.length; i++ ) {
   }
 }
 
-// Step through projects
+
+// Step through projects object:
 
 $("#projects").append(HTMLprojectStart);
 
@@ -164,13 +172,13 @@ for (var i = 0; i < projects.projects.length; i++ ) {
     var ref = "HTMLproject" + propUp;
     if (prop !== "images") {
       var formatted = window[ref].replace("%data%", projects.projects[i][prop]);
-      $(".project-entry").append(formatted);
+      $(".project-entry:last").append(formatted);
     } else
     for (var j = 0; j < projects.projects[i].images.length; j++) {
       var propUp = prop[0].toUpperCase() + prop.slice(1,-1); // Images became Image
       var ref = "HTMLproject" + propUp;
       var formatted = window[ref].replace("%data%", projects.projects[i][prop][j]);
-      $(".project-entry").append(formatted);
+      $(".project-entry:last").append(formatted);
     }
   }
 }
@@ -223,6 +231,21 @@ for (var i = 0; i < education.onlineCourses.length; i++) {
       $(".education-entry").append(formatted);
   }
 }
+
+// internationalize exercise:
+
+$("#main").append(internationalizeButton);
+
+function inName(name) {
+  var first = name.split(" ")[0];
+  var second = name.split(" ")[1].toUpperCase();
+  return first + " " + second;
+}
+
+// map
+
+$("#mapDiv").append(googleMap);
+
 
 // footer
     
