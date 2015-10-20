@@ -4362,8 +4362,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-toggle .icon-bar {
   display: block;
-  width: 22px;
-  height: 2px;
+  width: 42px;
+  height: 1px;
   border-radius: 1px;
 }
 .navbar-toggle .icon-bar + .icon-bar {

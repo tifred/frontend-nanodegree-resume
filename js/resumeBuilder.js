@@ -3,7 +3,7 @@
 // The json is also held in a nicely formatted file "json.fmt"
 // that is much easier to read.
 // The text below was generated with a shell command and copied in.
-// sed 's/^/'\''/' json.fmt | sed 's/$/'\'\ \+'/' > json.tmp 
+// sed 's/^/'\''/' json.fmt | sed 's/$/'\'\ \+'/' > json.tmp
 
 var bio = '{' +
 '    "name": "Eduardo Zanzibar", ' +
@@ -18,10 +18,10 @@ var bio = '{' +
 '   "welcomeMessage": "Feeling Fancy? Or Fabulistic?  With Eduardo Zanzibar, you don\'t have to choose.", ' +
 '   "skills": [' +
 '     "machinations", ' +
-'     "formicating", ' +
+'     "formications", ' +
 '     "ab liberation"' +
 '   ],' +
-'   "biopic": "images/197x148.gif"' +
+'   "biopic": "images/fry.jpg"' +
 '}';
 
 var education = '{' +
@@ -61,7 +61,7 @@ var education = '{' +
 '        "url": "http://udacity.com"' +
 '      }' +
 '    ] ' +
-'}'; 
+'}';
 
 var work = '{' +
 '    "jobs": [' +
@@ -89,9 +89,8 @@ var projects = '{' +
 '        "dates": "May 2015",' +
 '        "description": "Travel Photography from South America",' +
 '        "images": [' +
-'          "http://placehold.it/300x200", ' +
-'          "http://placehold.it/300x200", ' +
-'          "http://placehold.it/300x200" ' +
+'          "images/andes1-300.jpg", ' +
+'          "images/andes2-300.jpg" ' +
 '        ]' +
 '      },' +
 '      {' +
@@ -99,9 +98,8 @@ var projects = '{' +
 '        "dates": "Jan 2015",' +
 '        "description": "Professional Portfolio",' +
 '        "images": [' +
-'          "http://placehold.it/300x200", ' +
-'          "http://placehold.it/300x200", ' +
-'          "http://placehold.it/300x200" ' +
+'          "images/Hummingbird-300.jpg", ' +
+'          "images/Weaver-300.jpg" ' +
 '        ]' +
 '      }' +
 '    ]' +
@@ -118,21 +116,21 @@ var projects = JSON.parse(projects);
 // Create "display" method for all objects.
 
 // Function will step through object using foreach or "for in" loops.
-// For each HTML "helper" variable (found in helper.js), 
+// For each HTML "helper" variable (found in helper.js),
 // replace "%data%" placeholder with real data from JSON objects.
-// Jquery commands target the appropriate element in HTML page 
+// Jquery commands will target the appropriate element in HTML page
 // and append/prepend modified HTML.
 
-// With "for in" loops through objects, 
+// With "for in" loops through objects,
 // the property name (e..g "mobile") taken from the object
-// can be programatically matched up to the helper.js variable (e.g. "HTMLmobile)
+// is programatically matched up to the helper.js variable (e.g. "HTMLmobile)
 // by creating a new variable called "htmlProp".
 // The new variable has the string "HTML" prepended to the property name.
-// Thus an htmlProp variable is used in place of "prop" in all "for in" loops.
+// Thus an "htmlProp" variable is used in place of "prop" in all "for in" loops.
 // This avoids hardcoding the property names of objects.
 
 // Also note that sometimes property name must be massaged.
-// e.g. first letter must be made to upper case
+// e.g. first letter must be made upper case.
 // e.g. an "s" must be added to name.
 
 
@@ -148,7 +146,7 @@ bio.display = function() {
 
   // Add contacts (if they exist):
   for (prop in bio.contacts) {
-    var htmlProp = "HTML" + prop; 
+    var htmlProp = "HTML" + prop;
     var formatted = window[htmlProp].replace("%data%", bio.contacts[prop]);
     $("#topContacts").append(formatted);
   }
@@ -235,7 +233,7 @@ education.display = function() {
 	var htmlProp = "HTMLschool" + propUp;
 	var formatted = window[htmlProp].replace("%data%", education.schools[i][prop]);
 	$(".education-entry").append(formatted);
-      } 
+      }
     }
 
   // Loop through the school object again, this time getting just "majors".
@@ -250,7 +248,7 @@ education.display = function() {
 	  var formatted = window[htmlProp].replace("%data%", education.schools[i][prop][j]);
 	  $(".education-entry").append(formatted);
 	}
-      } 
+      }
     }
   }
 
@@ -300,7 +298,7 @@ $("#mapDiv").append(googleMap);
 
 
 // Append footer with contact information:
-    
+
 for (prop in bio.contacts) {
   var htmlProp = "HTML" + prop;
   var formatted = window[htmlProp].replace("%data%", bio.contacts[prop]);
