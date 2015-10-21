@@ -9,7 +9,7 @@ var bio = '{' +
 '    "name": "Eduardo Zanzibar", ' +
 '    "role": "Photography Fantabulist",' +
 '    "contacts": {' +
-'      "mobile": "415-345-8726",' +
+'      "mobile": "213-345-8726",' +
 '      "email": "ed_zanzibar@lmi.net",' +
 '      "github": "https://github.com/ed_zanzibar/",' +
 '      "twitter": "https://twitter/ed_zanzibar ",' +
